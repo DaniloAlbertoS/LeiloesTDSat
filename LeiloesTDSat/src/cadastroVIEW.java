@@ -150,6 +150,9 @@ public class cadastroVIEW extends javax.swing.JFrame {
         
         ProdutosDAO produtodao = new ProdutosDAO();
         produtodao.cadastrarProduto(produto);
+        //limpando area ao cadastrar.
+        cadastroNome.setText("");
+        cadastroValor.setText("");
         
     }//GEN-LAST:event_btnCadastrarActionPerformed
 

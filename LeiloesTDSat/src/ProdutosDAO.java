@@ -42,6 +42,7 @@ public class ProdutosDAO {
         // se efetuado com sucesso a mensagem de sucesso ao cadastrar
         if(linhasafetadas >0){
             JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            
         // se falhar a mensagem de falha
         }else{
             JOptionPane.showMessageDialog(null, "Falha no cadastro do produto.", "Erro", JOptionPane.ERROR_MESSAGE);
