@@ -23,7 +23,7 @@ public class conectaDAO {
         try {
             // colocando o meu banco de dados
         
-           conn = DriverManager.getConnection("jdbc:mysql://localhost/LeiloesTDSat?user=root&password=galaxia1");
+           conn = DriverManager.getConnection("jdbc:mysql://localhost/LeiloesTDSat?user=root&password=galaxia1&useSSL=false");// corrigindo erro ssl
             
         } catch (SQLException erro){
             JOptionPane.showMessageDialog(null, "Erro ConectaDAO" + erro.getMessage());
