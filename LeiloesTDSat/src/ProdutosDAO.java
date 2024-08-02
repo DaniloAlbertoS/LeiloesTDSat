@@ -25,6 +25,9 @@ public class ProdutosDAO {
     
     public void cadastrarProduto (ProdutosDTO produto){
         String sql = "INSERT INTO produtos (nome, valor,status) VALUES (?, ?, ?)";
+        // iniciando como nulo
+        conn =null;
+        prep = null;
         try{
         //criando o metodo de salvar 
         conn = new conectaDAO().connectDB();
@@ -36,22 +39,23 @@ public class ProdutosDAO {
         // execultando a sql
         int linhasafetadas  =prep.executeUpdate();
         
-        // se efetuado com sucesso 
+        // se efetuado com sucesso a mensagem de sucesso ao cadastrar
         if(linhasafetadas >0){
-            System.out.println("produto cadastrado com sucesso");
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        // se falhar a mensagem de falha
         }else{
-            System.out.println("falha no cadastro do produto");
+            JOptionPane.showMessageDialog(null, "Falha no cadastro do produto.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
          
         }catch(SQLException e){
-            System.out.println("erro ao cadastrar o produto:"+e.getMessage());
+           JOptionPane.showMessageDialog(null, "Erro ao cadastrar o produto: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }finally{
             //fechando as coneccoes
             try{
             if(prep != null)prep.close();
             if(conn != null) conn.close();  
         }catch(SQLException e){
-                System.out.println("Erro ao fechar os recursos "+ e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro ao fechar os recursos: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             
         }}
         
