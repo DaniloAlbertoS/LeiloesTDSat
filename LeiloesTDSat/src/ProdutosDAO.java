@@ -119,7 +119,7 @@ public class ProdutosDAO {
     }
 
     public void venderProduto(int id) {
-        String sql = "UPDATE produtos SET atatus = 'vendido' WHERE id = ?";
+        String sql = "UPDATE produtos SET status = 'vendido' WHERE id = ?";
         Connection conn = null;
         PreparedStatement prep = null;
 
