@@ -159,7 +159,7 @@ public class ProdutosDAO {
         
         try{
             conn = new conectaDAO().connectDB();
-            String sql = "SELECT * produtos WHERE status = 'vendido'";
+            String sql = "SELECT * FROM produtos WHERE status = 'Vendido' ";
             prep = conn.prepareStatement(sql);
             rs = prep.executeQuery();
             
